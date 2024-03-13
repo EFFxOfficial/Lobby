@@ -37,11 +37,13 @@ passport.deserializeUser(function(user, done) {
     done(null, user);
 });
 
+const STEAM_API_KEY = 'STEAM_API'
+
 // Set up Steam authentication strategy
 passport.use(new SteamStrategy({
     returnURL: 'http://localhost:3000/auth/steam/callback',
     realm: 'http://localhost:3000/',
-    apiKey: '240E98CA222BEA870AB24F5AD6B8CCEE'
+    apiKey: STEAM_API_KEY
 }, function(identifier, profile, done) {
     const steamId = identifier.match(/\d+$/)[0];
     return done(null, { steamId: steamId });
@@ -73,7 +75,7 @@ app.get('/steamid', (req, res) => {
 app.get('/getPlayerProfile', async (req, res) => {
     const { steamId } = req.query;
     try {
-        const response = await axios.get(`https://api.steampowered.com/ISteamUser/GetPlayerSummaries/v2/?key=240E98CA222BEA870AB24F5AD6B8CCEE&steamids=${steamId}`);
+        const response = await axios.get(`https://api.steampowered.com/ISteamUser/GetPlayerSummaries/v2/?key=${STEAM_API_KEY}&steamids=${steamId}`);
 
         const profileData = response.data.response.players[0];
         const displayName = profileData.personaname;
