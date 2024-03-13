@@ -1,0 +1,493 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: Gabarito, sans-serif;
+    background: #10101b;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    color: white;
+}
+
+.container__navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem;
+    background: #1a1a27;
+}
+
+.container__navbar-options{
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.container__navbar-options > span:first-child{
+    font-size: 2rem;
+}
+
+.container__navbar-options a{
+    text-decoration: none;
+    font-size: .9rem;
+    color: white;
+    padding-inline: .3rem;
+}
+
+.container__lobby{
+    max-width: 65%;
+    margin-inline: auto;
+}
+
+.steamProfile{
+    display: flex;
+    gap: .3rem;
+}
+
+.nameContainer{
+    display: flex;
+    align-items: flex-start;
+    gap: .5rem;
+}
+
+#steamAvatar{
+    width: 50px;
+    border-radius: 50%;
+}
+
+.container__lobby{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.container__lobby-teams{
+    background: #1a1a27;
+    border-radius: 5px;
+    padding-bottom: 4rem;
+    width: 100%;
+}
+
+.container__footer{
+    background: #1a1a27;
+    height: 150px;
+}
+
+.container__lobby-teams__name{
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem;
+}
+
+.container__teams{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    width: 100%;
+    padding-block: 1rem;
+    border-top: 1px solid #242432;
+    border-bottom: 1px solid #242432;
+}
+
+.container__lobby-options{
+    display: flex;
+    margin: 1rem auto -2rem;
+    justify-content: space-evenly;
+    width: max-content;
+}
+
+.container__lobby-options button{
+    margin-inline: 1rem;
+}
+
+.container__team{
+    padding: 1rem 2.4rem 3rem;
+    border-radius: 10px;
+    min-width: max-content;
+    position: relative;
+    min-height: 220px;
+}
+
+.container__lobby-container{
+    display: flex;
+    flex-direction: column;
+}
+
+.container__lobby-header{
+    padding-left: 2rem;
+    border-bottom: 1px solid #242432;
+    width: 100%;
+}
+
+.container__lobby-header__date{
+    display: flex;
+    margin: 2rem auto;
+    width: 90%;
+    align-items: center;
+    gap: 2rem;
+}
+
+.borderLine{
+    width: 100%;
+    height: 1px;
+    background: #242432;
+}
+
+#mapStartDate{
+    white-space: nowrap;
+    color: grey;
+}
+
+h4{
+    padding-block: 1rem .8rem;
+    width: max-content;
+    border-bottom: 1px solid red;
+}
+
+ul{
+    display: flex;
+    gap: 1.5rem;
+    padding-left: 0;
+}
+
+li{
+    display: flex;
+    gap: .4rem;
+    justify-content: space-between;
+    margin-block: 1rem;
+}
+
+.playerContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: .3rem;
+}
+.avatarContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: .3rem;
+}
+
+#teamElo1, #teamElo2{
+    color: grey;
+}
+
+.verticalLine{
+    height: 30px;
+    width: 1px;
+    background: #242432;
+}
+
+.teamContainer{
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.teamContainer svg{
+    fill: orangered;
+}
+
+.crownImage{
+    width: 30px;
+}
+
+.userAvatar{
+    width: 60px;
+    height: auto;
+    border-radius: 50%;
+}
+
+.userData{
+    display: flex;
+    flex-direction: column;
+    gap: .1rem;
+    white-space: nowrap;
+}
+
+.userData > span:first-child{
+    font-size: .7rem;
+}
+
+.userData > span:not(:first-child){
+    font-size: .6rem;
+}
+
+.alertContainer {
+    position: fixed;
+    top: 150px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #c78580;
+    color: #912d2d;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    opacity: 1;
+    transition: opacity 0.5s;
+}
+
+.alertContainer.hide {
+    opacity: 0;
+}
+
+.messageContainer{
+    display: flex;
+    gap: .3rem;
+    align-items: center;
+}
+
+.container__lobby-messages{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    background: #1a1a27;
+    border-radius: 10px;
+    margin-block: 2rem 4rem;
+}
+
+#messageList{
+    height: 300px;
+    width: 100%;
+    padding: .5rem;
+    overflow: auto;
+
+    gap: .5rem;
+    flex-direction: column;
+}
+
+#messageList li{
+    margin-block: 0 !important;
+    padding-inline: 1rem;
+}
+
+#scoreboard{
+    font-size: 3rem;
+}
+
+#team1, #team2{
+    font-weight: 500;
+    font-size: 1.1rem;
+    color: white;
+}
+
+#readyStatus1, #readyStatus2{
+    color: greenyellow;
+}
+
+.message__container{
+    display: flex;
+    width: 95%;
+    margin: 2rem auto 1rem;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+#messageInput{
+    width: 100%;
+    margin-inline: auto;
+    height: 80px;
+    outline: none;
+    border: none;
+    background: #252732;
+    border-radius: 10px;
+    padding-inline: 1rem;
+    color: white;
+}
+
+#joinTeam1, #joinTeam2{
+    white-space: nowrap;
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#readyNum{
+    padding: 0 0 2rem;
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+button{
+    background: orangered;
+    color: white;
+    border: none;
+    outline: none;
+    padding: .4rem 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 200ms;
+}
+
+.matchData{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#copyIP{
+    background: none;
+    padding: 0;
+}
+
+#copyIP svg{
+    fill: white;
+}
+
+.ipContainer{
+    margin-top: .5rem;
+    display: flex;
+    align-items: center;
+    gap: .3rem;
+}
+
+button:hover{
+    opacity: .4;
+}
+
+.kickButton{
+    padding: .2rem .5rem;
+}
+
+button[disabled] {
+    opacity: .4;
+    pointer-events: none;
+}
+
+#chosingHeader{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: .8rem;
+    font-weight: 500;
+    text-align: center;
+}
+
+#chosingHeader img{
+    border-radius: 5px;
+    width: 150px;
+    height: 80px;
+}
+
+#mapList{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .5rem;
+    height: 10px;
+}
+
+/* Add styles for the timer bar */
+#timerBarContainer {
+    width: 50%;
+    background-color: #ddd;
+    height: 20px;
+    margin-bottom: 10px;
+    display: none;
+}
+
+#timerBar {
+    height: 100%;
+    background-color: #4caf50;
+    width: 0;
+}
+
+@media screen and (max-width: 1620px){
+    .container__lobby {
+        max-width: 75%;
+    }
+}
+
+@media screen and (max-width: 1480px){
+    .userAvatar {
+        width: 50px;
+    }
+
+    .container__team{
+        min-width: 440px;
+    }
+}
+
+@media screen and (max-width: 1320px){
+    .container__lobby {
+        max-width: 85%;
+    }
+}
+
+@media screen and (max-width: 1225px){
+    .team2:first-child{
+        margin-top: 1.8rem;
+    }
+
+    #scoreboard{
+        white-space: nowrap;
+        font-size: 1.5rem;
+    }
+    
+    .container__team{
+        max-width: max-content;
+    }
+
+    .container__teams {
+        gap: 2rem;
+    }
+
+    .userAvatar {
+        width: 35px;
+    }
+
+    .userData > span:first-child {
+        font-size: .5rem;
+    }
+
+    .crownImage {
+        width: 20px;
+    }
+
+    #chosingHeader{
+        font-size: .6rem;
+    }
+
+    button[disabled]{
+        font-size: .5rem;
+    }
+}
+
+@media screen and (max-width: 990px){
+    .container__teams{
+        flex-direction: column;
+    }
+
+    .container__lobby-teams, .container__lobby-messages{
+        width: 80%;
+    }
+
+    .container__team{
+        max-width: 80%;
+    }
+
+    #team1Players{
+        flex-direction: row !important;
+    }
+
+    .userAvatar{
+        width: 65px;
+    }
+
+    .userData > span:first-child {
+        font-size: .8rem;
+    }
+}

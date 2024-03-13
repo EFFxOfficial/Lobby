@@ -1,0 +1,16 @@
+{
+	"STEAM_0:0:170639663":{
+		"elo": 348,
+		"ranking": 1,
+		"kills": 18,
+		"deaths": 6,
+		"hs": 8
+	},
+	"BOT":{
+		"elo": 148,
+		"ranking": 2,
+		"kills": 18,
+		"deaths": 6,
+		"hs": 8
+	}
+}

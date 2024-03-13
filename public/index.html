@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Lobby System</title>
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link href="https://fonts.googleapis.com/css2?family=Gabarito&family=Handjet:wght@700&family=Kanit:ital@0;1&family=Lora:ital,wght@1,600&family=Oswald&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300&family=Lora:ital,wght@1,600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container__navbar">
+        <div class="container__navbar-options">
+            <span>LOBBY</span>
+            <div class="verticalLine"></div>
+            <a href="#">Option1</a>
+            <a href="#">Option2</a>
+            <a href="#">Option3</a>
+            <a href="#">Option4</a>
+        </div>
+        <div id="client"></div>
+    </div>
+    <div class="container__map-list">
+        <div id="mapList"></div>
+    </div>
+    <div class="container__lobby">
+        <div id="timerBarContainer">
+            <div id="timerBar"></div>
+        </div>
+        <div class="container__lobby-teams">
+            <div class="container__lobby-teams__name">
+                <div class="teamContainer">
+                    <span id="team1">Team A <span id="readyStatus1"></span></span>
+                    <div class="verticalLine"></div>
+                    <svg width="22" height="13" viewBox="0 0 22 13" xmlns="http://www.w3.org/2000/svg" class="O_VJPq"><path d="M15.4 0L17.919 2.43774L12.551 7.63258L8.151 3.37452L0 11.2732L1.551 12.7742L8.151 6.3871L12.551 10.6452L19.481 3.94935L22 6.3871V0H15.4Z" fill-rule="evenodd"></path></svg>
+                    <span id="teamElo1"></span>
+                </div>
+                <div class="teamContainer">
+                    <svg width="22" height="13" viewBox="0 0 22 13" xmlns="http://www.w3.org/2000/svg" class="O_VJPq"><path d="M15.4 0L17.919 2.43774L12.551 7.63258L8.151 3.37452L0 11.2732L1.551 12.7742L8.151 6.3871L12.551 10.6452L19.481 3.94935L22 6.3871V0H15.4Z" fill-rule="evenodd"></path></svg>
+                    <span id="teamElo2"></span>
+                    <div class="verticalLine"></div>
+                    <span id="team2">Team B <span id="readyStatus2"></span></span>
+                </div>
+            </div>
+            <div class="container__teams">
+                <div class="container__team">
+                    <div class="container__lobby-container">
+                        <ul id="team1Players" style="flex-direction: row-reverse;justify-content: flex-start;"></ul>
+                        <button id="joinTeam1">Join Team A</button>
+                    </div>
+                </div>
+                <div id="chosingHeader"></div>
+                <div class="container__team">
+                    <div class="container__lobby-container">
+                        <ul id="team2Players"></ul>
+                        <button id="joinTeam2">Join Team B</button>
+                    </div>
+                </div>
+            </div>
+            <div class="container__lobby-options">
+                <button id="readyButton">Ready</button>
+                <button id="leaveLobby">Leave Lobby</button>
+                <button id="deleteLobby">Delete Lobby</button>
+                <button id="registerRandomUser">Register User</button>
+            </div>
+        </div>
+        <div class="container__lobby-messages">
+            <div class="container__lobby-header">
+                <h4>Lobby chat</h4>
+            </div>
+            <div class="container__lobby-header__date">
+                <div class="borderLine"></div>
+                <span id="mapStartDate">Chat Started</span>
+                <div class="borderLine"></div>
+            </div>
+            <ul id="messageList"></ul>
+            <div class="message__container">
+                <input type="text" id="messageInput" placeholder="Type your message...">
+            </div>
+        </div>        
+    </div>
+    <div class="container__footer">
+        
+    </div>
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+        /*
+        if (window.history.replaceState) {
+            window.history.replaceState(null, null, window.location.href);
+        }
+
+        document.addEventListener("keydown", function(event) {
+            if (event.keyCode === 116) { // Check if the pressed key is F5
+                event.preventDefault(); // Prevent the default behavior of refreshing the page
+                if (userAuthID) {
+                    // If the user is logged in, reload the page
+                    window.location.reload();
+                }
+            }
+        });
+        */
+    </script>
+    <script src="./client.js"></script>
+</body>
+</html>
